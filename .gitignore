@@ -1,0 +1,16 @@
+/training.txt
+/logs
+/models--bert-base-uncased
+/version.txt
+/.locks
+/LLMs_experiments/*_results
+/LLMs_experiments/*cache*
+/_results.txt
+/*.sh
+
+/*.ipynb_checkpoints
+.gitignore
+__pycache__*
+*.ipynb_checkpoints*
+
+*.env*
