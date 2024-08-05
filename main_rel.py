@@ -215,12 +215,12 @@ def main(args):
             program = program_declaration_StepGame_T5(cur_device,
                                                    pmd=args.pmd, beta=args.beta,
                                                    sampling=args.sampling, sampleSize=args.sampling_size,
-                                                   dropout=args.dropout, constraints=args.constrains)
+                                                   dropout=args.dropout, constraints=args.constraints)
         else:
             program = program_declaration_StepGame(cur_device,
                                                    pmd=args.pmd, beta=args.beta,
                                                    sampling=args.sampling, sampleSize=args.sampling_size,
-                                                   dropout=args.dropout, constraints=args.constrains)
+                                                   dropout=args.dropout, constraints=args.constraints)
     else:
         if args.model == "t5-adapter":
             print("call T5")
@@ -239,12 +239,12 @@ def main(args):
             program = program_declaration_function(cur_device,
                                                      pmd=args.pmd, beta=args.beta,
                                                      sampling=args.sampling, sampleSize=args.sampling_size,
-                                                     dropout=args.dropout, constraints=args.constrains)
+                                                     dropout=args.dropout, constraints=args.constraints)
         else:
             program = program_declaration_spartun_fr(cur_device,
                                                      pmd=args.pmd, beta=args.beta,
                                                      sampling=args.sampling, sampleSize=args.sampling_size,
-                                                     dropout=args.dropout, constraints=args.constrains,
+                                                     dropout=args.dropout, constraints=args.constraints,
                                                      model=args.model)
 
     boolQ = args.train_file.upper() == "BOOLQ"
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     parser.add_argument("--beta", dest="beta", type=float, default=0.5)
     parser.add_argument("--sampling", dest="sampling", type=bool, default=False)
     parser.add_argument("--sampling_size", dest="sampling_size", type=int, default=1)
-    parser.add_argument("--constrains", dest="constrains", type=bool, default=False)
+    parser.add_argument("--constraints", dest="constraints", type=bool, default=False)
     parser.add_argument("--loaded", dest="loaded", type=bool, default=False)
     parser.add_argument("--loaded_file", dest="loaded_file", type=str, default="train_model")
     parser.add_argument("--loaded_train", type=bool, default=False, help="Option to load and then further train")

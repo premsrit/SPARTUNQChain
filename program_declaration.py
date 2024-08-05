@@ -53,10 +53,6 @@ def program_declaration(cur_device, *, pmd=False, beta=0.5, sampling=False, samp
         question["input_ids"] = JointSensor(story_contain, 'question', "story",
                                             forward=T5Tokenizer('google/flan-t5-base'), device=cur_device)
         clf = MultipleClassYNT5('google/flan-t5-base', device=cur_device, adapter=True)
-    elif model == "t5":
-        question["input_ids"] = JointSensor(story_contain, 'question', "story",
-                                            forward=tokenizer, device=cur_device)
-        clf = MultipleClassYNLlama3(model_ids, tokenizer, device=cur_device, adapter=True)
     elif model == "llama3":
         model_ids = "meta-llama/Meta-Llama-3-8B"
         tokenizer = Llama3Tokenizer(model_ids)

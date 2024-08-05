@@ -282,7 +282,7 @@ if __name__ == "__main__":
     parser.add_argument("--sampling", dest="sampling", type=bool, default=False)
     parser.add_argument("--sampling_size", dest="sampling_size", type=int, default=1)
     parser.add_argument("--constraints", dest="constraints", type=bool, default=False)
-    parser.add_argument("--loaded", dest="loaded", type=bool, default=False)
+    parser.add_argument("--loaded", dest="loaded", type=bool, default=False, help="Option to load and evaluate the model")
     parser.add_argument("--loaded_file", dest="loaded_file", type=str, default="train_model")
     parser.add_argument("--loaded_train", type=bool, default=False, help="Option to load and then further train")
     parser.add_argument("--save", dest="save", type=bool, default=False)
